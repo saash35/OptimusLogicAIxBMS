@@ -1,4 +1,4 @@
-<h1 align="center">💰 Currency Denomination Detection using YOLO</h1>
+<h1 align="center">💷 Currency Denomination Detection using YOLO</h1>
 <br>
 <h2>Step 1:- Gathering Data</h2>
 <ul> 
@@ -65,4 +65,33 @@ the smallest, yolo11l and x are the largest. For now, its fine to use yolo11n. <
 <img src="ScreenShots/ColabTrainingTheModel.png"> 
 <p>11. Next to “epochs=’, this determines the amount of cycles your model is trained for. For a final model, 100-300 epochs are usually a good amount. For now, choose anywhere from 10-50 epochs. If you’re unsure, use 10. </p>
 <p>12. Run the snippet and wait for it to finish. This may take a while. </p>
+<p>13. After Runing All the Code Snippets  you will see different images and their IDs </p>
+<img src="ScreenShots/ColabTestCase.jpeg">
 <p>13. Congrats! You now have a fully trained model. </p>
+
+<h2>Step 4:- Local Deployment</h2>
+<p>1. In order to download the trained model onto your computer, open the file browser tab on 
+the left </p>
+<p>2. Navigate to datasets → runs → detect → train → weights → look for a file called 
+“best.pt” and download it to your computer. </p>
+<img src="ScreenShots/ColabDownloadModel.jpeg">
+<p> 3. Open a code editor like Visual Studio Code and create a new python file. </p>
+<p> 4. In Visual Studio Code or any other IDE,Create a Virtual Environment (.venv) </p>
+<img src="ScreenShots/VSCodeVenv.jpeg">
+<p>5. Activate the venv and install ultralytics,OpenCV,Numpy using command given below </p>
+<img src="ScreenShots/Install Libraries.jpeg">
+<p>6. Make sure that the best.pt file, and Python file that you are going to create now are both in the same directory </p>
+<p>7. Use the code <u>oldeploy1.py</u> given to run the program to test the model and save result to notepad file</p>
+<p>8. source = "0"  - change this line from zero to "file path" to give any test images to the model instead of taking it from the webcam</p>
+<p>9. Open a new terminal on VS Code in the same venv</P>
+<p>10. Enter the command <br> python -m http.server 8000</p>
+<img src="ScreenShots/VSCodeTerminalCommand.jpeg">
+<p>11. This creates a server using port 8000 and the computer acts as server with access granted thru IPv4 address of the computer</p>
+<p>12. The txt file can be accessed using <br>
+https://<insert ip address>:8000/detect.txt </p>
+
+<h2>Final Results</h2>
+<p>1. On running the Python Program ,your Computers WebCam will turn on and there will be a live feed on your display as shown below.</p>
+<img src="ScreenShots/Testing_1.jpeg">
+<p>2. After Running the Server ,you can open your web browser (Chrome,FireFox,Brave,Edge,Internet Explorer and so on), paste in the Ip Address as mentioned before.You will get the following showen on your web browser.</p>
+<img src="ScreenShots/Server_Output.jpeg">
